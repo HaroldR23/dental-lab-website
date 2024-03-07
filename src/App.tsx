@@ -1,4 +1,5 @@
 import './App.css'
+import AnchorItem from './components/atoms/AnchorItem/AnchorItem';
 import Carousel from './components/molecules/Carousel/Carousel'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div>
       <Carousel autoplay={false} imgUrls={[`${BASE_URL}oflkwza.png`, `${BASE_URL}LUt2uEP.png`, `${BASE_URL}BBJVCPI.png`]}/>
+      <AnchorItem id='5'/>
     </div>
   )
 }

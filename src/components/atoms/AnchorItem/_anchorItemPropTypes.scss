@@ -1,0 +1,19 @@
+.anchorItem {
+
+    color: $negro;
+    text-decoration: none;
+    -moz-transition-property: background-color, border-radius, width;
+    -webkit-transition-property:background-color, border-radius, width;
+    -o-transition-property:background-color, border-radius, width;
+    transition-property: background-color, border-radius, width;
+    @include transition-2(1.8s, ease);
+
+}
+
+.anchorItem:hover{
+
+    background-color: rgb($blanco, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+
+}
