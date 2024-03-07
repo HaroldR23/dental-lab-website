@@ -17,4 +17,4 @@ describe("Carousel", () => {
             expect(includesAltAttribute).toBe(true)
         });
     });
-})
+});
