@@ -1,0 +1,38 @@
+//VARIABLES:
+$azul: #b2dafa;
+$rosado: #ffe5f0;
+$blanco: white;
+$negro: #191919;
+$amarillo: #fffec2;
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Sansita+Swashed:wght@300&display=swap');
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+    // scroll-behavior: smooth;
+}
+
+ *, *::before, *::after{
+     box-sizing: inherit;
+ }
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Sansita Swashed', cursive;
+    // width: 80%;
+    // line-height: 1.6;
+    background-color: $azul;
+}
+
+@mixin transition-2($duration, $timing) {
+    -moz-transition-duration:  $duration;
+    -webkit-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+    -moz-transition-timing-function: $timing;
+    -webkit-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
