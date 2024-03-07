@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import AnchorItem from "./AnchorItem";
 
-describe('AnchorItem Component', () => {
+describe('AnchorItem', () => {
   it('renders with the correct id and className attributes', () => {
     const testId = 'testId';
     const { container } = render(<AnchorItem id={testId} />);
