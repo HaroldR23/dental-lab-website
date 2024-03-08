@@ -1,0 +1,5 @@
+.anchorContainer {
+    @include caja-flex(space-between, center, nowrap);
+    width: 500px;
+    margin-right: 50px;
+}
