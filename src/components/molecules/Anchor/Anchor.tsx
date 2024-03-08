@@ -2,11 +2,11 @@ import AnchorItem from "../../atoms/AnchorItem/AnchorItem"
 import { AnchorItemPropTypes } from "../../atoms/AnchorItem/AnchorItemPropTypes";
 import { AnchorPropTypes } from "./AnchorPropTypes"
 
-const Anchor = ({ anchorIdsList }: AnchorPropTypes) => {
+const Anchor = ({ anchorList }: AnchorPropTypes) => {
     return (
-        <div role="list">
+        <div role="list" className="anchorContainer">
             {
-                anchorIdsList.length !== 0 && anchorIdsList.map(
+                anchorList.length !== 0 && anchorList.map(
                     (anchor: AnchorItemPropTypes, index: number) => 
                     <div role="listitem" key={index}>
                         <AnchorItem 

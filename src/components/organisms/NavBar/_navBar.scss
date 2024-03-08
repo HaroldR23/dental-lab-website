@@ -1,0 +1,10 @@
+.navContainer {
+    @include caja-flex(space-between, center, nowrap);
+    // @include transition-1(opacity, 1.5s, ease);
+    background-color: rgb($azul, 0.7);
+    // opacity: 0;
+    position: sticky;
+    top: 0px;
+    box-shadow: 10px 0px 5px rgb($negro, 0.5);
+    // z-index: 10;
+}
