@@ -1,16 +1,18 @@
 import { render } from "@testing-library/react";
 import AnchorItem from "./AnchorItem";
 
-describe('AnchorItem', () => {
-  it('renders with the correct id and className attributes', () => {
-    const testId = 'testId';
-    const { container } = render(<AnchorItem id={testId} />);
+describe("AnchorItem", () => {
+  it("renders with the correct id and className attributes", () => {
+    const id = "testId";
+    const href = "href-id";
+    const title = "title id";
+    const { container } = render(<AnchorItem id={id} href={href} title={title}/>);
 
     const anchorItem = container.querySelector(".anchorItem");
-    const id = anchorItem?.getAttribute("id");
+    const currentId = anchorItem?.getAttribute("id");
     const className = anchorItem?.getAttribute("class");
 
-    expect(id).toBe(testId);
+    expect(currentId).toBe(id);
     expect(className).toBe("anchorItem");
   });
 });

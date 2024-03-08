@@ -1,8 +1,8 @@
 import { AnchorItemPropTypes } from "./AnchorItemPropTypes";
 
-const AnchorItem = ({ id }: AnchorItemPropTypes) => {
+const AnchorItem = ({ id, href, title }: AnchorItemPropTypes) => {
     return(
-        <div id={id} className="anchorItem"/>
+        <a id={id} href={href} className="anchorItem">{title}</a>
     );
 }
 
