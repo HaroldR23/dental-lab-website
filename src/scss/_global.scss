@@ -50,3 +50,10 @@ body{
     -o-transition: $property $duration $timing;
     transition: $property $duration $timing;
 }
+
+@mixin caja-grid-3($column, $row, $gap) {
+    display: grid;
+    grid-template-columns: $column $column $column;
+    grid-template-rows: $row;
+    grid-gap: $gap
+}

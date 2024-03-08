@@ -61,6 +61,17 @@ body {
 .buttonLink {
   cursor: pointer;
   border-radius: 50px;
+  width: 285px;
+  height: 285px;
+  flex-direction: column;
+  z-index: 1;
+  clip-path: circle(28% at center);
+  background-color: transparent;
+  border-color: transparent;
+  -moz-transition-property: background-color, clip-path;
+  -webkit-transition-property: background-color, clip-path;
+  -o-transition-property: background-color, clip-path;
+  transition-property: background-color, clip-path;
   -moz-transition-duration: 1.5s;
   -webkit-transition-duration: 1.5s;
   -o-transition-duration: 1.5s;
@@ -69,17 +80,6 @@ body {
   -webkit-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  clip-path: circle(28% at center);
-  background-color: transparent;
-  border-color: transparent;
-  -moz-transition-property: background-color, clip-path;
-  -webkit-transition-property: background-color, clip-path;
-  -o-transition-property: background-color, clip-path;
-  transition-property: background-color, clip-path;
-  width: 285px;
-  height: 285px;
-  flex-direction: column;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,6 +92,26 @@ body {
 .buttonLink:hover {
   background-color: #ffe5f0;
   clip-path: circle(100% at center);
+}
+
+.galeryContainer {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.galeryContainer img {
+  border: #fffec2 10px solid;
+  border-radius: 5px;
+  -moz-transition: transform 0.75s ease;
+  -webkit-transition: transform 0.75s ease;
+  -o-transition: transform 0.75s ease;
+  transition: transform 0.75s ease;
+}
+.galeryContainer img:hover {
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=index.css.map */
