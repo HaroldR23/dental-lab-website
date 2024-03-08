@@ -38,4 +38,24 @@ body {
   padding: 5px;
 }
 
+.anchorContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 500px;
+  margin-right: 50px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: rgba(178, 218, 250, 0.7);
+  position: sticky;
+  top: 0px;
+  box-shadow: 10px 0px 5px rgba(25, 25, 25, 0.5);
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -36,3 +36,17 @@ body{
     -o-transition-timing-function: $timing;
     transition-timing-function: $timing;
 }
+
+@mixin caja-flex($principal, $cruzado, $wrap) {
+    display: flex;
+    justify-content: $principal;
+    align-items: $cruzado;
+    flex-wrap: $wrap;
+}
+
+@mixin transition-1($property, $duration, $timing) {
+    -moz-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}

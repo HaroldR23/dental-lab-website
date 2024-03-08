@@ -1,3 +1,4 @@
 @import "./global";
-@import "../components/atoms/AnchorItem/anchorItemPropTypes";
-@import "../components/molecules/AnchorItems/anchorItems";
+@import "../components/atoms/AnchorItem/anchorItem";
+@import "../components/molecules/Anchor/anchor";
+@import "../components/organisms/NavBar/navBar";
