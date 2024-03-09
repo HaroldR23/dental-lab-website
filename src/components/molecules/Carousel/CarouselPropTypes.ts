@@ -1,4 +1,6 @@
+import { ReactElement } from "react"
+
 export interface CarouselPropTypes {
-    imgUrls: string[]
+    children: ReactElement[]
     autoplay: boolean
 }
