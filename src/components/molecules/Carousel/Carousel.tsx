@@ -1,11 +1,14 @@
 import { Carousel as AntdCarousel } from "antd";
 import { CarouselPropTypes } from "./CarouselPropTypes";
+import { ReactElement } from "react";
 
-const Carousel = ({ imgUrls, autoplay }: CarouselPropTypes) => {
+const Carousel = ({ children, autoplay }: CarouselPropTypes) => {
     return(
         <AntdCarousel autoplay={autoplay}>
-            {imgUrls.map((imgUrl: string, index: number) => (
-                <img key={index} src={imgUrl} alt={imgUrl} />
+            {children.map((element: ReactElement, index: number) => (
+                <div key={index}>
+                    {element}
+                </div>
             ))}
         </AntdCarousel>
     )
