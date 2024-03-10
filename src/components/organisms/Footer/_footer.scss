@@ -1,0 +1,18 @@
+.footer {
+
+    @include caja-flex(space-between, center, nowrap);
+    margin-top:50px ;
+    padding-right: 40px;
+    padding-left: 10px;
+    background-color: #fffec2;
+    height: 150px;
+    font-size: 90%;
+    img{
+        border-radius: 5px;
+    }
+    // h6{
+    //     border-bottom: $negro solid 1px;
+    //     border-radius: 5px;
+    // }
+
+}

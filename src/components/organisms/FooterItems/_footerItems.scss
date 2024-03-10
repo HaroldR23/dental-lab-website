@@ -1,0 +1,18 @@
+.footerItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 10px;
+    text-emphasis-color: black;
+    div:hover {
+        color: $azul;
+    }
+}
+
+.footerItemsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+}
