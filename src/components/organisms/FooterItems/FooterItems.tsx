@@ -5,15 +5,15 @@ const FooterItems = ({ items }: FooterItemsPropTypes) => {
 
     const footerItems = (children: FooterChildType[]) => {
         return children.map((child: FooterChildType, index: number) => (
-            <div key={index}>
+            <div className="footerItems" key={index}>
                 {child.icon}
-                <p>{child.description}</p>
+                <div>{child.description}</div>
             </div>
         ));
     };
 
     return (
-        <div>
+        <div className="footerItemsContainer">
             {
                 items.map((item: FooterItemType, index: number) => (
                     <InformationContent
