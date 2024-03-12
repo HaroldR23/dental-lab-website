@@ -7,7 +7,7 @@ describe("ButtonLink", () => {
         const text = "Button text test";
         const { container } = render(<ButtonLink icon={<StarOutlined />} text={text}/>);
 
-        const h4Element = container.querySelector("h4");
+        const h4Element = container.querySelector("div");
         const svgElement = container.querySelector("svg");
 
         expect(svgElement).not.toBeNull();

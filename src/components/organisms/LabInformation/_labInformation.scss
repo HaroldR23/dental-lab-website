@@ -1,0 +1,20 @@
+.labInformationItem {
+    background-color:$rosado ;
+    background-image: url('https://i.imgur.com/Wmff3ve.png');
+    background-size: 100% 100%;
+    width:400px;
+    height: 320px;
+    margin:15px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
+    font-size: 90%;
+    border-radius: 20px;
+    h4{
+        text-align: center;
+        font-weight: lighter;
+        border-bottom: $negro 1px solid;
+    }
+}
+
+.labInformationContainer {
+    @include caja-flex(center, center, wrap);
+}

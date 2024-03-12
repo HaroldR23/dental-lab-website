@@ -1,19 +1,18 @@
 import Paragraph from "../../atoms/Paragraph/Paragraph";
-import Carousel from "../../molecules/Carousel/Carousel";
-import InformationContent from "../../molecules/InformationContent/InformationContent";
-import { LabInformationItemType, LabInformationPropTypes } from "./LabInformationPropTypes";
+import { LabInformationPropTypes } from "./LabInformationPropTypes";
 
 const LabInformation = ({ items }: LabInformationPropTypes) => {
-    const carouselItems = items.map((item: LabInformationItemType, index: number) => (
-        <InformationContent 
-            key={index} 
-            title={item.title} 
-            children={[<Paragraph textContent={item.description}/>]}
-        />
-    ));
-
     return (
-        <Carousel autoplay children={carouselItems}/>
+        <div className="labInformationContainer" id="labInfo">
+            {
+                items.map((item, index) => (
+                    <div key={index} className="labInformationItem">
+                        <h4>{item.title}</h4>
+                        <Paragraph textContent={item.description}/>
+                    </div>
+                ))
+            }
+        </div>
     );
 }
 
