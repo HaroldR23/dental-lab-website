@@ -3,8 +3,8 @@ import { ProductCardPropTypes } from "./ProductCardPropTypes";
 
 const ProductCard = ({ productName, imgUrl, price }: ProductCardPropTypes) => {
     const childrenItems = [
-        <img src={imgUrl} alt={productName} />,
-        <p>{price}</p>
+        <img key={0} src={imgUrl} alt={productName} />,
+        <p key={1}>{price}</p>
     ]
     return (
         <div className="productCard">
