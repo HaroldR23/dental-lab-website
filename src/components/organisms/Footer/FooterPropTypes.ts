@@ -2,5 +2,7 @@ import { FooterItemType } from "../FooterItems/FooterItemsPropTypes";
 
 export interface FooterPropTypes {
     items: FooterItemType[]
-    logoUrl: string
+    logoFooterUrl: string
+    logoCopyrightUrl: string
+    copyrightTextContent: string
 }

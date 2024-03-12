@@ -1,25 +1,28 @@
 .buttonLink {
     cursor: pointer;
-        border-radius: 50px;
-        width: 285px;
-        height: 285px;
-        flex-direction: column;
-        z-index: 1;
-        clip-path: circle(28% at center);
-        background-color: transparent;
-        border-color: transparent;
+    border-radius: 50px;
+    width: 285px;
+    height: 285px;
+    flex-direction: column;
+    z-index: 1;
+    clip-path: circle(28% at center);
+    background-color: transparent;
+    border-color: transparent;
+    font-family: 'Sansita Swashed', cursive;
 
-        -moz-transition-property: background-color, clip-path;
-        -webkit-transition-property:background-color, clip-path ;
-        -o-transition-property:background-color, clip-path ;
-        transition-property:background-color, clip-path ;
+    -moz-transition-property: background-color, clip-path;
+    -webkit-transition-property:background-color, clip-path ;
+    -o-transition-property:background-color, clip-path ;
+    transition-property:background-color, clip-path ;
 
-        @include transition-2(1.5s, ease-out);
-        @include caja-flex(center, center, nowrap);
-
-        h4{
-            margin-top: 5px;
-        }
+    @include transition-2(1.5s, ease-out);
+    @include caja-flex(center, center, nowrap);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    div{
+        margin-top: 5px;
+    }
 }
 
 .buttonLink:hover{

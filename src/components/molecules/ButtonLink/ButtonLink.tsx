@@ -4,7 +4,7 @@ const ButtonLink = ({ text, icon }: ButtonLinkPropTypes) => {
     return (
             <button className="buttonLink">
                 {icon}
-                <h4>{text}</h4>
+                <div>{text}</div>
             </button>
     )
 }

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 export interface FooterChildType {
-    icon: ReactElement
+    icon?: ReactElement
     description: string
 }
 
