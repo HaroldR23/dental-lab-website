@@ -1,0 +1,18 @@
+.buttonLinksContainer {
+    @include caja-flex(space-around, space-around, wrap);
+    flex-direction: row;
+    margin: 60px;
+    width: 100%;
+}
+
+.textContent {
+    margin: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.homePageContainer {
+    @include caja-flex(center, center, nowrap);
+    flex-direction: column;
+}
