@@ -1,6 +1,11 @@
-export interface ProductModel {
-    id: string
-    name: string
+export interface PriceType {
     price: string
-    imageUrl: string
+    description: string
+}
+
+export interface ProductModel {
+    id?: string
+    name: string
+    price: PriceType[]
+    imageUrl?: string
 }
