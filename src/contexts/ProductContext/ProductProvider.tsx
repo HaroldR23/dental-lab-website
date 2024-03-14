@@ -2,12 +2,13 @@ import { ProductContext } from "./ProductContext";
 import { useEffect, useState } from "react";
 import { ProductModel } from "../../models/ProductModel";
 import { ProductProviderType } from "./ProductContextPropTypes";
+import { createProductService } from "../../services/productServices";
 
 const ProductProvider = ({ children }: ProductProviderType) => {
     const [products, setProducts] = useState<ProductModel[]>([]);
     const createProduct = (product: ProductModel) => {
         setProducts([...products, product]);
-        // TODO: Add API call to create product
+        createProductService(product);
     };
 
     useEffect(() => {

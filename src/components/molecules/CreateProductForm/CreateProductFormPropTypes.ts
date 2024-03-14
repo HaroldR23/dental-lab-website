@@ -1,3 +1,3 @@
 export interface CreateProductFormPropTypes {
-    onChange: (<ChangeEventType>(event: ChangeEventType) => void);
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
