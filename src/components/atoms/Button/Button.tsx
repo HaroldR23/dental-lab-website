@@ -2,10 +2,11 @@ import { ButtonPropTypes } from "./ButtonPropTypes";
 
 const Button = ({
     textContent, 
-    onClick, 
+    onClick,
+    className
 }: ButtonPropTypes) => {
     return (
-        <button className="button" onClick={onClick}>
+        <button className={className} onClick={onClick}>
             {textContent}
         </button>
     )

@@ -1,0 +1,12 @@
+.productsBodyContainer {
+    @include caja-flex(center, center, nowrap);
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.buttonHeaderContainer {
+    @include caja-flex(space-between, center, nowrap);
+    margin-top: 50px;
+    width: 80%;
+}

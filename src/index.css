@@ -120,11 +120,6 @@ body {
   transform: scale(1.05);
 }
 
-.carousel {
-  width: fit-content;
-  height: fit-content;
-}
-
 .footerItems {
   display: flex;
   justify-content: flex-start;
@@ -232,6 +227,70 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.productCard {
+  font-size: 90%;
+  background-color: rgba(255, 254, 194, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 320px;
+  border-radius: 15px;
+}
+.productCard img {
+  border-radius: 15px;
+  padding-top: 5px;
+  height: 200px;
+  width: 300px;
+  margin-bottom: 15px;
+}
+.productCard h4 {
+  border-bottom: #191919 1px solid;
+}
+
+.priceContainer {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.productCardList {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  margin: 50px 0px 0px 0px;
+}
+
+.productsBodyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+.buttonHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+  width: 80%;
+}
+
+.createButton {
+  background-color: #fffec2;
+  border: transparent;
+  border-radius: 5px;
+  width: 150px;
+  height: 35px;
+  cursor: pointer;
+  font-family: "Sansita Swashed", cursive;
 }
 
 /*# sourceMappingURL=index.css.map */
