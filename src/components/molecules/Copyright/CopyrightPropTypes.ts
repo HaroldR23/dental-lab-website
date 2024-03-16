@@ -1,4 +1,4 @@
 export interface CopyrightPropTypes {
-    textContent: string
-    logoUrl: string
+    textContent?: string
+    logoUrl?: string
 }

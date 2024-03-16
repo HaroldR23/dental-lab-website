@@ -1,4 +1,4 @@
-type descriptionType = 
+export type descriptionType = 
     "superior_e_inferior" | 
     "valor_individual" | 
     "cada_protesis" | 

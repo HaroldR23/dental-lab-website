@@ -44,10 +44,10 @@ export const FOOTER_ITEMS = [
 export const FOOTER_LOGO_URL = `${BASE_URL}4ft4J4j.png`;
 
 export const ANCHOR_ITEMS = [
-    { href:"#footer", id:"1", title:"Contáctanos"},
-    { href:"#content", id:"2", title:"¿Qué te ofrecemos?"},
-    { href:"#labInfo", id:"3", title:"Nosotros"},
-    { href:"#galery", id:"3", title:"Galeria"}
+    { href:"/#footer", id:"1", title:"Contáctanos"},
+    { href:"/#content", id:"2", title:"¿Qué te ofrecemos?"},
+    { href:"/#labInfo", id:"3", title:"Nosotros"},
+    { href:"/#galery", id:"3", title:"Galeria"}
 ];
 
 

@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import { ButtonLinkPropTypes } from "./ButtonLinkPropTypes";
 
-const ButtonLink = ({ text, icon }: ButtonLinkPropTypes) => {
+const ButtonLink = ({ text, icon, disabled }: ButtonLinkPropTypes) => {
     return (
-            <button className="buttonLink">
+        <Link to="/products">
+            <button className="buttonLink" disabled={disabled}>
                 {icon}
                 <div>{text}</div>
             </button>
+        </Link>
     )
 }
 

@@ -1,15 +1,20 @@
-import { PRODUCTS } from "../../../constants/productConstants";
+import { useProductContext } from "../../../hooks/useProductContext";
 import ProductCard from "../ProductCard/ProductCard";
-// import { useProductContext } from "../../../hooks/useProductContext";
+import { LoadingOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
 
 const ProductCardList = () => {
-    // const {
-    //     products
-    // } = useProductContext();
-    const products = PRODUCTS;
+    const {
+        products,
+        loading
+    } = useProductContext();
+    
+    if (loading) {
+        return <Spin indicator={<LoadingOutlined style={{ fontSize: 24, color: "black" }} spin />} />
+    }
     return (
         <div className="productCardList">
-            {products.map((product) => (
+            {products?.map((product) => (
                 <ProductCard
                     key={product.id} 
                     imgUrl={product.imageUrl} 
