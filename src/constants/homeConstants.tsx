@@ -10,11 +10,13 @@ export const CAROUSEL_IMAGES = IMAGES_SRC.map((src, index) =>
 export const BUTTON_LINKS = [
     {
         text: "Productos",
-        icon: <ProductFilled width="100px" height="100px" />
+        icon: <ProductFilled width="100px" height="100px" />,
+        disabled: false
     },
     {
         text: "Agendar cita",
-        icon: <ScheduleFilled width="100px" height="100px" />
+        icon: <ScheduleFilled width="100px" height="100px" />,
+        disabled: true
     }
 ];
 export const GALLERY_IMAGES_SRC = [

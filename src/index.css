@@ -69,6 +69,7 @@ body {
   background-color: transparent;
   border-color: transparent;
   font-family: "Sansita Swashed", cursive;
+  text-decoration: none;
   -moz-transition-property: background-color, clip-path;
   -webkit-transition-property: background-color, clip-path;
   -o-transition-property: background-color, clip-path;
@@ -291,6 +292,26 @@ body {
   height: 35px;
   cursor: pointer;
   font-family: "Sansita Swashed", cursive;
+  margin: 5px;
+}
+
+.cancelButton {
+  background-color: #ffe5f0;
+  border: transparent;
+  border-radius: 5px;
+  width: 150px;
+  height: 35px;
+  cursor: pointer;
+  font-family: "Sansita Swashed", cursive;
+  margin: 5px;
+}
+
+.createProductForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=index.css.map */

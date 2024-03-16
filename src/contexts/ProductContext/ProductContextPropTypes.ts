@@ -6,7 +6,9 @@ export interface ProductProviderType {
 }
 
 export interface ProductContextType {
-    products: ProductModel[]
+    products: ProductModel[] | null
     setProducts: (products: ProductModel[]) => void
     createProduct: (product: ProductModel) => void
+    loading: boolean;
+    error: string | null | unknown;
 }

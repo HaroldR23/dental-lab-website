@@ -1,0 +1,4 @@
+.createProductForm {
+    @include caja-flex(center, center, wrap);
+    flex-direction: row;
+}

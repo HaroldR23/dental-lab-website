@@ -45,22 +45,20 @@ export const getAllProductsService = async () => {
 
     try {
       const response = await (await fetch(RAPIDAPI_URL, options)).json();
-      console.log(response, "result in service per se");
-      const products = response.map(async (product: any) => {
-        const response = await getProductByIdService(product.id);
-        return {
-          id: response.id,
-          name: response.name,
-          price: response.price,
-          imageUrl: response.imageUrl
-        };
+      const productsListResponse = response.map(async (product: any) => {
+          const productById = await getProductByIdService(product.id)
+              return {
+              name: productById.name,
+              price: productById.price,
+              imageUrl: productById.imageUrl
+            }
       });
-      console.log(products, "products in service per se");
+      const products = await Promise.all(productsListResponse);
       return products;
     } catch (error) {
       console.error(error);
-    }
-};
+    } 
+  };
 
 export const getProductByIdService = async (id: string) => {
     const options = {
@@ -72,9 +70,8 @@ export const getProductByIdService = async (id: string) => {
     };
 
     try {
-      const response = await fetch(`${RAPIDAPI_URL}/${id}`, options);
-      const result = await response.json();
-      return result;
+      const response = await (await (fetch(`${RAPIDAPI_URL}/${id}`, options))).json();
+      return response;
     } catch (error) {
       console.error(error);
     }

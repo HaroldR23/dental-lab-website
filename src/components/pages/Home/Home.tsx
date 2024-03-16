@@ -16,6 +16,7 @@ const Home = () => {
                   <ButtonLink 
                     icon={buttonLink.icon} 
                     text={buttonLink.text}
+                    disabled={buttonLink.disabled}
                     key={index}
                   />
               )

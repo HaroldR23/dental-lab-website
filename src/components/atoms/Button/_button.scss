@@ -6,4 +6,16 @@
     height: 35px;
     cursor: pointer;
     font-family: 'Sansita Swashed', cursive;
+    margin: 5px;
+}
+
+.cancelButton {
+    background-color: $rosado;
+    border: transparent;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    font-family: 'Sansita Swashed', cursive;
+    margin: 5px;
 }

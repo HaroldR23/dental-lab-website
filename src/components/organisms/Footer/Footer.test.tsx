@@ -26,7 +26,7 @@ describe("Footer", () => {
         const mockLogoUrl = "https://www.example.com";
 
         const { container } = render(
-            <Footer items={mockFooterItems} logoUrl={mockLogoUrl} />
+            <Footer items={mockFooterItems} logoFooterUrl={mockLogoUrl} />
         );
         const img = container.querySelector("img");
 
