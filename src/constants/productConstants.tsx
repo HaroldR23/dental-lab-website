@@ -7,4 +7,4 @@ export const SELECT_OPTIONS = [
 ];
 
 export const RAPIDAPI_URL = "https://json-store.p.rapidapi.com";
-export const API_KEY = import.meta.env.VITE_API_KEY;
+export const API_KEY = process.env.VITE_API_KEY;
