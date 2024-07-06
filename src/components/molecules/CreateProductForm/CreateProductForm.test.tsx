@@ -8,9 +8,11 @@ describe("CreateProductForm", () => {
     it("should render two inputs one of text type and the other one of number type", () => {
         const { container } = render(<CreateProductForm onChange={mockOnchange}/>);
         const inputs = container.querySelectorAll("input");
-        expect(inputs).toHaveLength(2);
+    
+        expect(inputs).toHaveLength(3);
         expect(inputs[0].type).toBe("text");
-        expect(inputs[1].type).toBe("number");
+        expect(inputs[1].type).toBe("search");
+        expect(inputs[2].type).toBe("text");
     });
     it("should call the onChange function when the input value changes", () => {
         const { container } = render(<CreateProductForm onChange={mockOnchange}/>);
