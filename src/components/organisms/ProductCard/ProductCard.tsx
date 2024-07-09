@@ -11,8 +11,8 @@ const ProductCard = ({ productName, imgUrl, price }: ProductCardPropTypes) => {
     };
     const childrenItems = [
         <div key={1} className="priceContainer">{
-            price?.map((priceOption: PriceType) => (
-                <div key={priceOption.description}>
+            price?.map((priceOption: PriceType, index) => (
+                <div key={index}>
                     •{parsePriceDescription(priceOption.description)}: ${priceOption.price}
                 </div>
             ))}

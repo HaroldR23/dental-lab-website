@@ -15,8 +15,8 @@ const ProductProvider = ({ children }: ProductProviderType) => {
       setLoading(true);
     }
   
-    const createProduct = (product: ProductModel) => {
-        createProductService(product);
+    const createProduct = async (product: ProductModel) => {
+        await createProductService({...product, imageUrl: FOOTER_LOGO_URL});
         setProducts([...products || [], {...product, imageUrl: FOOTER_LOGO_URL}]);
     };
 
