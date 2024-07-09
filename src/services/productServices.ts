@@ -22,7 +22,6 @@ export const getAllProductsService = async () => {
 
 
 export const createProductService = async (product: ProductModel) => {
-  console.log(product, "product-----<<<<")
   try {
     await fetch(`${API_URL}products`, {
       method: "POST",
