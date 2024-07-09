@@ -6,5 +6,4 @@ export const SELECT_OPTIONS = [
     { label: "Cada diente", value: "cada_diente" },
 ];
 
-export const RAPIDAPI_URL = "https://json-store.p.rapidapi.com";
-export const API_KEY = process.env.VITE_API_KEY;
+export const API_URL = process.env.VITE_API_URL;

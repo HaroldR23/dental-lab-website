@@ -8,7 +8,7 @@ Thank you for your time and any feedback is welcome.
 ### Environment variables
 Crete a .env file as follow
 ```
-VITE_API_KEY=XXXXXX
+VITE_API_URL=XXXXXX
 ```
 I'll send the secret value to Gustavo Egüez, Abraham Matus and José Puebla.
 
