@@ -11,12 +11,13 @@ export const BUTTON_LINKS = [
     {
         text: "Productos",
         icon: <ProductFilled width="100px" height="100px" />,
-        disabled: false
+        disabled: false,
+        ref_path: "/products"
     },
     {
         text: "Agendar cita",
         icon: <ScheduleFilled width="100px" height="100px" />,
-        disabled: true
+        disabled: false,
     }
 ];
 export const GALLERY_IMAGES_SRC = [
