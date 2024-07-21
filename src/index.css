@@ -314,4 +314,31 @@ body {
   flex-direction: row;
 }
 
+.listContainer {
+  overflow: scroll;
+  height: 50px;
+}
+.listContainer div {
+  height: 20px;
+  background-color: #ff9e8e;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.calendarContainer {
+  width: 100%;
+  padding: 20px;
+}
+.calendarContainer .ant-picker-cell {
+  height: 90px;
+}
+.calendarContainer .ant-picker-cell-in-view {
+  background-color: #ffe5f0;
+  margin: 10px;
+  border-radius: 15px;
+}
+
 /*# sourceMappingURL=index.css.map */

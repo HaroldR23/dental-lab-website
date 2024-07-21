@@ -8,14 +8,11 @@
         margin-left: 10px;
     }
     &:hover {
-        color: $azul;
+        color: $blue;
     }
 }
 
 .footerItemsContainer {
     @include caja-flex(space-evenly, space-evenly, nowrap);
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
     width: 80%;
 }
