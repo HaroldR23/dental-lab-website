@@ -1,16 +1,16 @@
 //VARIABLES:
-$azul: #b2dafa;
+$blue: #b2dafa;
 $rosado: #ffe5f0;
 $blanco: white;
 $negro: #191919;
 $amarillo: #fffec2;
+$red: #ff9e8e;
 
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Sansita+Swashed:wght@300&display=swap');
 
 html{
     font-size: 100%;
     box-sizing: border-box;
-    // scroll-behavior: smooth;
 }
 
  *, *::before, *::after{
@@ -21,9 +21,8 @@ body{
     margin:0;
     padding:0;
     font-family: 'Sansita Swashed', cursive;
-    // width: 80%;
-    // line-height: 1.6;
-    background-color: $azul;
+
+    background-color: $blue;
 }
 
 @mixin transition-2($duration, $timing) {
