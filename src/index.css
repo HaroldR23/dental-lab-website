@@ -329,16 +329,67 @@ body {
 }
 
 .calendarContainer {
-  width: 100%;
+  width: 50%;
   padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid black;
 }
 .calendarContainer .ant-picker-cell {
   height: 90px;
 }
 .calendarContainer .ant-picker-cell-in-view {
-  background-color: #ffe5f0;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
+}
+
+.ant-modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.scheduleButton {
+  display: contents;
+  flex-direction: row;
+  align-self: center;
+  justify-self: center;
+}
+
+.createAppointmentForm {
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  align-self: flex-start;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  width: 250px;
+}
+.inputsContainer input {
+  border: 1px solid black;
+}
+
+.select {
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.scheduleButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 120px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=index.css.map */
