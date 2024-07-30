@@ -13,14 +13,31 @@
 }
 
 .calendarContainer {
-    width: 100%;
+    width: 50%;
     padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid black;
     .ant-picker-cell {
         height: 90px;
       }
     .ant-picker-cell-in-view {
-        background-color: $rosado;
         margin: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
+}
+
+.ant-modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.scheduleButton {
+    display: contents;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
 }

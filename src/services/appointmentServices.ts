@@ -35,7 +35,8 @@ export const createAppointmentService = async (appointment: AppointmentModel) =>
                 date: appointment.date,
                 time: appointment.time,
                 patient_name: appointment.patientName,
-                patient_email: appointment.patientEmail
+                patient_email: appointment.patientEmail,
+                patient_phone: appointment.patientPhone
             }),
         });
     } catch (error: any) {

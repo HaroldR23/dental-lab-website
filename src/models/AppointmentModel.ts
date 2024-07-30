@@ -4,4 +4,5 @@ export interface AppointmentModel {
     date: string
     patientName: string
     patientEmail: string
+    patientPhone: string
 }

@@ -14,21 +14,24 @@ describe("groupByDate", () => {
               time: "10:00",
               date: "2022-01-01",
               patientName: "John Doe",
-              patientEmail: "johndoe@example.com"
+              patientEmail: "johndoe@example.com",
+              patientPhone: "123456789"
             },
             {
               id: "2",
               time: "11:00",
               date: "2022-01-01",
               patientName: "Jane Smith",
-              patientEmail: "janesmith@example.com"
+              patientEmail: "janesmith@example.com",
+              patientPhone: "123456789"
             },
             {
                 id: "3",
                 time: "12:00",
                 date: "2022-01-02",
                 patientName: "Alice Johnson",
-                patientEmail: "alice@example.com"
+                patientEmail: "alice@example.com",
+                patientPhone: "123456789"
               },
           ];
 
@@ -41,6 +44,7 @@ describe("groupByDate", () => {
                     date: "2022-01-01", 
                     patientName: "John Doe",
                     patientEmail: "johndoe@example.com",
+                    patientPhone: "123456789",
                     time: "10:00"
                 },
                 { 
@@ -48,6 +52,7 @@ describe("groupByDate", () => {
                     date: "2022-01-01", 
                     patientName: "Jane Smith",
                     patientEmail: "janesmith@example.com",
+                    patientPhone: "123456789",
                     time: "11:00"
                 },
             ],
@@ -57,6 +62,7 @@ describe("groupByDate", () => {
                     date: "2022-01-02", 
                     patientName: "Alice Johnson",
                     patientEmail: "alice@example.com",
+                    patientPhone: "123456789",
                     time: "12:00"
                 },
             ],

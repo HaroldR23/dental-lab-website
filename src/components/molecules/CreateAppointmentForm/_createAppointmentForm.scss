@@ -1,0 +1,33 @@
+.createAppointmentForm{
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    align-self: flex-start
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    width: 250px;
+    input {
+        border: 1px solid black;
+    }
+}
+
+.select {
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.scheduleButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 40px;
+}
