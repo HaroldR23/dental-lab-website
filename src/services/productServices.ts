@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { API_URL } from "../constants/productConstants";
 import { ProductModel } from "../models/ProductModel";
+import { RequestBody, getFetchMethod, postFetchMethod } from "./utils/httpClient";
 
 export const getAllProductsService = async () => {
   try {
-    const response = await fetch(`${API_URL}products`, {method: "GET"});
-    const data = await response.json();
+    const data = await getFetchMethod(`${API_URL}products`);
     const dataResponse: ProductModel[] = data.map((product: any) => (
       {
         id: product.id, 
@@ -13,8 +13,9 @@ export const getAllProductsService = async () => {
         price: product.prices.map((price: any) => ({price: price.value, description: price.description})), 
         imageUrl: product.img_url
       }));
-    dataResponse
-    return dataResponse;
+
+      return dataResponse;
+
   } catch (error: any) {
     throw new Error(error);
   }
@@ -23,17 +24,14 @@ export const getAllProductsService = async () => {
 
 export const createProductService = async (product: ProductModel) => {
   try {
-    await fetch(`${API_URL}products`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: product.name,
-        prices: product.price.map((price) => ({value: price.price, description: price.description})),
-        img_url: product.imageUrl,
-      }),
-    });
+    const body: RequestBody = {
+      name: product.name,
+      prices: product.price.map((price) => ({value: price.price, description: price.description})),
+      img_url: product.imageUrl
+    };
+
+    await postFetchMethod(`${API_URL}products`, body);
+  
   } catch (error: any) {
     throw new Error(error);
   }

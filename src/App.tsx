@@ -1,8 +1,9 @@
 import { Route, BrowserRouter as Router, Routes,  } from 'react-router-dom'
-import Home from './components/pages/Home/Home'
-import Products from './components/pages/Poducts/Products'
+
 import ProductProvider from './contexts/ProductContext/ProductProvider'
 import AppointmentProvider from './contexts/AppointmentContext/AppointmentProvider'
+import Home from './pages/Home/Home';
+import Products from './pages/Poducts/Products';
 
 function App() {
 

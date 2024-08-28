@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Button from "../../atoms/Button/Button";
-import ProductCardList from "../../organisms/ProductCardList/ProductCardList";
-import PageTemplate from "../../templates/PageTemplate";
-import CreateProductModal from "../../organisms/CreateProductModal/CreateProductModal";
+import Button from "../../components/atoms/Button/Button";
+import ProductCardList from "../../components/organisms/ProductCardList/ProductCardList";
+import CreateProductModal from "../../components/organisms/CreateProductModal/CreateProductModal";
+import PageTemplate from "../../components/templates/PageTemplate";
+
 
 const Products = () => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -13,14 +14,14 @@ const Products = () => {
             <div className="productsBodyContainer">
                 <div className="buttonHeaderContainer">
                     <h1>Products</h1>
-                    <Button 
+                    <Button
                         className="createButton"
                         textContent="Crear producto" 
                         onClick={handleOpen}
                     />
                 </div>
                 <ProductCardList />
-                <CreateProductModal 
+                <CreateProductModal
                     isModalOpen={isOpenModal} 
                     handleClose={handleClose}
                 />
@@ -29,7 +30,7 @@ const Products = () => {
     };
 
     return (
-        <PageTemplate 
+        <PageTemplate
             body={<ProductsBody />}
         />
     );
