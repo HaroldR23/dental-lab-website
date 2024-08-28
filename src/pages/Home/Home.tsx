@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Carousel from "../../molecules/Carousel/Carousel";
-import PageTemplate from "../../templates/PageTemplate";
-import { BUTTON_LINKS, CAROUSEL_IMAGES, GALLERY_IMAGES_SRC, LAB_INFORMATION_ITEMS } from "../../../constants/homeConstants";
-import ButtonLink from "../../molecules/ButtonLink/ButtonLink";
-import Galery from "../../molecules/Galery/Galery";
-import LabInformation from "../../organisms/LabInformation/LabInformation";
-import ModalCalendar from "../../organisms/ModalCalendar/ModalCalendar";
+import { BUTTON_LINKS, CAROUSEL_IMAGES, GALLERY_IMAGES_SRC, LAB_INFORMATION_ITEMS } from "../../constants/homeConstants";
+import ButtonLink from "../../components/molecules/ButtonLink/ButtonLink";
+import Galery from "../../components/molecules/Galery/Galery";
+import LabInformation from "../../components/organisms/LabInformation/LabInformation";
+import ModalCalendar from "../../components/organisms/ModalCalendar/ModalCalendar";
+import PageTemplate from "../../components/templates/PageTemplate";
+import { Carousel } from "antd";
+
 
 const Home = () => {
 
