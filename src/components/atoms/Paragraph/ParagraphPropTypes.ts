@@ -1,3 +1,3 @@
 export interface ParagraphPropTypes {
-    textContent: string
+  textContent: string
 }

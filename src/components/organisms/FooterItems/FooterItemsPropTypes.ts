@@ -1,15 +1,15 @@
 import { ReactElement } from "react";
 
 export interface FooterChildType {
-    icon?: ReactElement
-    description: string
+  icon?: ReactElement
+  description: string
 }
 
 export interface FooterItemType {
-    children: FooterChildType[]
-    title: string
+  children: FooterChildType[]
+  title: string
 }
 
 export interface FooterItemsPropTypes {
-    items: FooterItemType[]
+  items: FooterItemType[]
 }
