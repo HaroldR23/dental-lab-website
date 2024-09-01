@@ -1,5 +1,5 @@
 export interface AnchorItemPropTypes {
-    id: string
-    title: string
-    href: string
+  id: string
+  title: string
+  href: string
 }

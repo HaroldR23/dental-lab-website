@@ -1,3 +1,3 @@
 export interface GaleryPropTypes {
-    imageUrls: string[];
+  imageUrls: string[];
 }
