@@ -14,12 +14,12 @@ function App() {
           <AppointmentProvider>
             <Home />
           </AppointmentProvider>
-          } />
-          <Route path="/products" element={
-            <ProductProvider>
-              <Products />
-            </ProductProvider>
-          } />
+        } />
+        <Route path="/products" element={
+          <ProductProvider>
+            <Products />
+          </ProductProvider>
+        } />
       </Routes>
     </Router>
   )
