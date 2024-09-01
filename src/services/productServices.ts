@@ -14,7 +14,7 @@ export const getAllProductsService = async () => {
         imageUrl: product.img_url
       }));
 
-      return dataResponse;
+    return dataResponse;
 
   } catch (error: any) {
     throw new Error(error);
