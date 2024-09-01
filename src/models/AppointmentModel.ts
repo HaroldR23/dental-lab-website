@@ -1,8 +1,8 @@
 export interface AppointmentModel {
-    id?: string
-    time: string
-    date: string
-    patientName: string
-    patientEmail: string
-    patientPhone: string
+  id?: string
+  time: string
+  date: string
+  patientName: string
+  patientEmail: string
+  patientPhone: string
 }

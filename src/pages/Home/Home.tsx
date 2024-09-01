@@ -15,18 +15,18 @@ const Home = () => {
   
     return (
       <div className="homePageContainer">
-         <div className="buttonLinksContainer" id="content">
+        <div className="buttonLinksContainer" id="content">
           {
-              BUTTON_LINKS.map((buttonLink, index) => 
-                  <ButtonLink 
-                    icon={buttonLink.icon}
-                    text={buttonLink.text}
-                    disabled={buttonLink.disabled}
-                    ref_path={buttonLink.ref_path}
-                    onClick={buttonLink.ref_path ? undefined : () => setIsModalOpen(true) }
-                    key={index}
-                  />
-              )
+            BUTTON_LINKS.map((buttonLink, index) => 
+              <ButtonLink 
+                icon={buttonLink.icon}
+                text={buttonLink.text}
+                disabled={buttonLink.disabled}
+                ref_path={buttonLink.ref_path}
+                onClick={buttonLink.ref_path ? undefined : () => setIsModalOpen(true) }
+                key={index}
+              />
+            )
           }
         </div>
         <div className="textContent">Algunos de nuestros trabajos</div>
@@ -38,14 +38,14 @@ const Home = () => {
           onClose={() => setIsModalOpen(false)}
         />
       </div>
-      )      
-   }
-    return (
-        <PageTemplate
-          carousel={<Carousel autoplay children={CAROUSEL_IMAGES}/>}
-          body={<HomeBody/>}
-        />
-    );
+    )      
+  }
+  return (
+    <PageTemplate
+      carousel={<Carousel autoplay children={CAROUSEL_IMAGES}/>}
+      body={<HomeBody/>}
+    />
+  );
 };
 
 export default Home;
