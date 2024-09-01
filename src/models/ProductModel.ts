@@ -6,13 +6,13 @@ export type descriptionType =
     "cada_diente"; 
 
 export interface PriceType {
-    price: string
-    description: descriptionType
+  price: string
+  description: descriptionType
 }
 
 export interface ProductModel {
-    id?: string
-    name: string
-    price: PriceType[]
-    imageUrl?: string
+  id?: string
+  name: string
+  price: PriceType[]
+  imageUrl?: string
 }
