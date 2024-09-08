@@ -1,10 +1,11 @@
-import { Modal } from "antd";
+import { ConfigProvider, Modal } from "antd";
 import CreateProductForm from "../../molecules/CreateProductForm/CreateProductForm";
 import { useState } from "react";
 import { ProductModel } from "../../../models/ProductModel";
 import Button from "../../atoms/Button/Button";
 import { CrateProductModalPropTypes } from "./CreateProductModalPropTypes";
 import { useProductContext } from "../../../hooks/useProductContext";
+import { NAME_PRODUCT_INPUT_ERROR_MESSAGE, PRICE_INPUT_ERROR_MESSAGE } from "../../../constants/productConstants";
 
 const CreateProductModal = ({ isModalOpen, handleClose }: CrateProductModalPropTypes) => {
   const { createProduct } = useProductContext();
@@ -16,21 +17,50 @@ const CreateProductModal = ({ isModalOpen, handleClose }: CrateProductModalPropT
     else if(e.target.name === "price") setForm({ ...form,  price: [{...form.price[0], price: e.target.value}]});
     else setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  const [errors, setErrors] = useState({
+    name: "",
+    price: ""
+  });
+  
+  const validate = () => {
+    const newErrors = {
+      name: form.name ? "" : NAME_PRODUCT_INPUT_ERROR_MESSAGE,
+      price: form.price ? "" : PRICE_INPUT_ERROR_MESSAGE
+    };
+    setErrors(newErrors);
+    return Object.values(newErrors).every(error => error === "");
+  };
+
   const handleSaveClick = () => {
-    createProduct(form);
-    handleClose();
+    if (validate()) {
+      createProduct(form);
+      handleClose();
+    }
   };
 
   return (
-    <Modal onCancel={handleClose} open={isModalOpen} footer={
-      [
-        <Button className="createButton" textContent={"Guardar"} onClick={handleSaveClick} />,
-        <Button className="cancelButton" textContent={"Cancelar"} onClick={handleClose} />
-      ]
-    }>
-      <CreateProductForm onChange={handleChange} />
-            
-    </Modal>
+    <ConfigProvider
+      theme={{
+        components: {
+          Modal: {
+            contentBg: "#b2dafa",
+          }
+        }
+      }}
+    >
+      <Modal className="modalContainer" onCancel={handleClose} open={isModalOpen} footer={
+        [
+          <Button className="createButton" textContent={"Guardar"} onClick={handleSaveClick} />,
+          <Button className="cancelButton" textContent={"Cancelar"} onClick={handleClose} />
+        ]
+      }>
+        <CreateProductForm 
+          onChange={handleChange} 
+          errors={errors}
+        />
+      </Modal>
+    </ConfigProvider>
   );
 };
 

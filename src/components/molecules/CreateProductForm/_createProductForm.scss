@@ -1,4 +1,11 @@
 .createProductForm {
-    @include caja-flex(center, center, wrap);
-    flex-direction: row;
+    .input {
+        margin-top: 20px;
+        width: 250px;
+        display: flex;
+        align-items:  space-between;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
 }
