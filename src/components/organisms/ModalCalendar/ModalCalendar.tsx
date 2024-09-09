@@ -86,10 +86,10 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
     });
   }
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleClick = () => {
     if (validate()) {
       createAppointment(form);
+      onClose();
     }
   }
 

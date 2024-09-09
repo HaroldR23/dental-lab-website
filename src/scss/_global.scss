@@ -56,3 +56,14 @@ body{
     grid-template-rows: $row;
     grid-gap: $gap
 }
+
+@mixin button_style($background_color) {
+    background-color: $background_color;
+    border: transparent;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    font-family: 'Sansita Swashed', cursive;
+    margin: 5px;
+}

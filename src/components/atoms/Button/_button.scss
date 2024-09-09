@@ -1,21 +1,16 @@
 .createButton {
-    background-color: $amarillo;
-    border: transparent;
-    border-radius: 5px;
-    width: 150px;
-    height: 35px;
-    cursor: pointer;
-    font-family: 'Sansita Swashed', cursive;
-    margin: 5px;
+    @include button_style($amarillo);
 }
 
 .cancelButton {
-    background-color: $rosado;
-    border: transparent;
-    border-radius: 5px;
-    width: 150px;
-    height: 35px;
-    cursor: pointer;
-    font-family: 'Sansita Swashed', cursive;
-    margin: 5px;
+    @include button_style($rosado);
+}
+
+.scheduleButton {
+    @include button_style($amarillo);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
 }

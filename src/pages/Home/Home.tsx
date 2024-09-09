@@ -9,9 +9,11 @@ import { Carousel } from "antd";
 
 
 const Home = () => {
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const handleClose = () => setIsOpenModal(false);
+  const handleOpen = () => setIsOpenModal(true);
 
   const  HomeBody = () => {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   
     return (
       <div className="homePageContainer">
@@ -23,7 +25,7 @@ const Home = () => {
                 text={buttonLink.text}
                 disabled={buttonLink.disabled}
                 ref_path={buttonLink.ref_path}
-                onClick={buttonLink.ref_path ? undefined : () => setIsModalOpen(true) }
+                onClick={buttonLink.ref_path ? undefined : handleOpen }
                 key={index}
               />
             )
@@ -34,8 +36,8 @@ const Home = () => {
         <div className="textContent">Nosotros</div>
         <LabInformation items={LAB_INFORMATION_ITEMS}/>
         <ModalCalendar
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          isOpen={isOpenModal}
+          onClose={handleClose}
         />
       </div>
     )      
