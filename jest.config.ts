@@ -4,7 +4,7 @@ const config: Config = {
   verbose: true,
   testEnvironment: "jest-environment-jsdom",
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.tsx?$": "babel-jest",
   },
   preset: "ts-jest",
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
