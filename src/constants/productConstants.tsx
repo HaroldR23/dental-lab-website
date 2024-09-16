@@ -8,6 +8,6 @@ export const SELECT_OPTIONS = [
 export const NAME_PRODUCT_INPUT_ERROR_MESSAGE = "Ingrese el nombre del producto";
 export const PRICE_INPUT_ERROR_MESSAGE = "Ingrese el precio del producto";
 
-export const API_URL = process.env.VITE_API_URL;
+export const API_URL = import.meta.env.VITE_API_URL;
 
 console.log(API_URL, "API_URL ---<<<");
