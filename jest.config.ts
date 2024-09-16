@@ -8,11 +8,7 @@ const config: Config = {
   },
   preset: "ts-jest",
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-    },
-  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };
 
 export default config;
