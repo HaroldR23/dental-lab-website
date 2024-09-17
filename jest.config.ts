@@ -8,7 +8,7 @@ const config: Config = {
   },
   preset: "ts-jest",
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
-
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };
 
 export default config;
