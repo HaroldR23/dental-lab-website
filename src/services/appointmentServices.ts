@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { API_URL } from "../constants/productConstants";
+import { API_URL } from "../constants/commonConstants";
 import { AppointmentModel } from "../models/AppointmentModel";
 import { RequestBody, getFetchMethod, postFetchMethod } from "./utils/httpClient";
 
