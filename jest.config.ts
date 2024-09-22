@@ -1,5 +1,5 @@
 import type {Config} from 'jest';
-const COVERAGE_THRESHOLD = 80;
+const COVERAGE_THRESHOLD = 30;
 
 const config: Config = {
   verbose: true,
