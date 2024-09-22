@@ -22,10 +22,16 @@ jobs:
           node-version: '20.x'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run linters
         run: npm run lint
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests with coverage
+        run: npm run coverage
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          file: coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
