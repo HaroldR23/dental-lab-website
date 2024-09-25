@@ -6,7 +6,7 @@ export const IMAGES_SRC = [
   `${BASE_URL}BBJVCPI.png`
 ];
 export const CAROUSEL_IMAGES = IMAGES_SRC.map((src, index) => 
-  <img key={index} width="100%" height="40%" src={src} alt={`carousel_image_${index}`}/>);
+  <img key={index} src={src} alt={`carousel_image_${index}`}/>);
 export const BUTTON_LINKS = [
   {
     text: "Productos",

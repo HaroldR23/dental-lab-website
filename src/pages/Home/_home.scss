@@ -16,3 +16,7 @@
     @include caja-flex(center, center, nowrap);
     flex-direction: column;
 }
+
+.ant-carousel {
+    line-height: 0%;
+}
