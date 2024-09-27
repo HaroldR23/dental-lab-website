@@ -20,3 +20,12 @@
 .ant-carousel {
     line-height: 0%;
 }
+
+@media (max-width: 600px) {
+    .buttonLinksContainer {
+        margin: 0px;
+    }
+    .textContent{
+        font-size: 20px;
+    }
+}
