@@ -25,7 +25,22 @@
     }
 }
 
+.buttonLink:visited{
+    color: inherit;
+}
+
 .buttonLink:hover{
     background-color: $rosado;
     clip-path: circle(100% at center);
+}
+
+@media (max-width: 600px) {
+    .buttonLink {
+        width: 200px;
+        height: 200px;
+        clip-path: none;
+        div {
+            font-size: 20px;
+        }
+    }
 }
