@@ -4,3 +4,10 @@
         border-radius: 5px;
     }
 }
+
+@media (max-width: 600px) {
+    .informationContent {
+        width: 65%;
+        margin: 0 auto;
+    }
+}

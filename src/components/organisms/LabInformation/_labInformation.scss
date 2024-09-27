@@ -8,6 +8,10 @@
     margin-bottom: 40px;
 
 }
+#labInfo{
+    width: 100%;
+    @include caja-flex(center, center, nowrap);
+}
 
 .ant-collapse-content-box {
     background-color: rgb($rosado, 0.75);
