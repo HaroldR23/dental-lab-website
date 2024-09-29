@@ -2,9 +2,9 @@ import { Input, Select } from "antd"
 import { CreateProductFormPropTypes } from "./CreateProductFormPropTypes";
 import { SELECT_OPTIONS } from "../../../constants/productConstants";
 
-const CreateProductForm = ({ onChange, errors }: CreateProductFormPropTypes) => {  // TODO: Implement add more than one price option
+const CreateProductForm = ({ onChange, errors }: CreateProductFormPropTypes) => {
   return (
-    <form className="createProductForm">
+    <form className="createProductForm" data-testid="createProductForm">
       <div className="input">
         <Input 
           placeholder="Nombre del producto" 
@@ -22,7 +22,6 @@ const CreateProductForm = ({ onChange, errors }: CreateProductFormPropTypes) => 
           options={SELECT_OPTIONS}
           onChange={onChange}
         />
-        {errors.price && <span className="error">{errors.price}</span>}
       </div>
       <div className="input">
         <Input 

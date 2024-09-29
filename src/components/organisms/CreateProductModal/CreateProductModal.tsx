@@ -49,7 +49,7 @@ const CreateProductModal = ({ isModalOpen, handleClose }: CrateProductModalPropT
         }
       }}
     >
-      <Modal className="modalContainer" onCancel={handleClose} open={isModalOpen} footer={
+      <Modal data-testid="modal" className="modalContainer" onCancel={handleClose} open={isModalOpen} footer={
         [
           <Button className="createButton" textContent={"Guardar"} onClick={handleSaveClick} />,
           <Button className="cancelButton" textContent={"Cancelar"} onClick={handleClose} />
