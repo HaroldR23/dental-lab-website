@@ -57,6 +57,13 @@ body{
     grid-gap: $gap
 }
 
+@mixin caja-grid-2($column, $row, $gap) {
+    display: grid;
+    grid-template-columns: $column $column;
+    grid-template-rows: $row;
+    grid-gap: $gap
+}
+
 @mixin button_style($background_color) {
     background-color: $background_color;
     border: transparent;

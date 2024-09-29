@@ -5,7 +5,7 @@ import Galery from "../../components/molecules/Galery/Galery";
 import LabInformation from "../../components/organisms/LabInformation/LabInformation";
 import ModalCalendar from "../../components/organisms/ModalCalendar/ModalCalendar";
 import PageTemplate from "../../components/templates/PageTemplate";
-import { Carousel } from "antd";
+import { Carousel, Divider } from "antd";
 
 
 const Home = () => {
@@ -23,7 +23,6 @@ const Home = () => {
               <ButtonLink 
                 icon={buttonLink.icon}
                 text={buttonLink.text}
-                disabled={buttonLink.disabled}
                 ref_path={buttonLink.ref_path}
                 onClick={buttonLink.ref_path ? undefined : handleOpen }
                 key={index}
@@ -31,8 +30,10 @@ const Home = () => {
             )
           }
         </div>
+        <Divider/>
         <div className="textContent">Algunos de nuestros trabajos</div>
         <Galery imageUrls={GALLERY_IMAGES_SRC}/>
+        <Divider/>
         <div className="textContent">Nosotros</div>
         <LabInformation items={LAB_INFORMATION_ITEMS}/>
         <ModalCalendar
