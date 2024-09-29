@@ -10,7 +10,7 @@ const ProductCardList = () => {
   } = useProductContext();
     
   if (loading) {
-    return <Spin indicator={<LoadingOutlined style={{ fontSize: 24, color: "black" }} spin />} />
+    return <Spin data-testid="spin" indicator={<LoadingOutlined style={{ fontSize: 24, color: "black" }} spin />} />
   }
   return (
     <div className="productCardList">

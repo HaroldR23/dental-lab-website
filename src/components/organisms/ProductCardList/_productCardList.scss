@@ -11,7 +11,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
     .productCardList {
         @include caja-flex(center, center, wrap);
         margin: 0px;
