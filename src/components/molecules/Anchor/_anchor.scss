@@ -3,3 +3,13 @@
     width: 500px;
     margin-right: 50px;
 }
+
+@media (max-width: 600px) {
+    .anchorContainer {
+        height: 120px;
+        width: auto;
+        margin-right: 0px;
+        flex-direction: column;
+        padding: 8px 0px 8px 0px;
+    }
+}
