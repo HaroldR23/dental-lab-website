@@ -7,7 +7,7 @@ describe("InformationContent", () => {
     const title = "Test Title";
     const children = [<div key={0}>Test Children1</div>, <div key={1}>Test Children2</div>];
 
-    render(<InformationContent title={title} children={children}/>);
+    render(<InformationContent infoClassName="test" title={title} children={children}/>);
 
     const titleElement = screen.getByRole("heading");
     const childrenElements = screen.queryAllByRole("listitem");
@@ -23,7 +23,7 @@ describe("InformationContent", () => {
     const title = "Test Title";
     const children: ReactElement[] = [];
 
-    render(<InformationContent title={title} children={children}/>);
+    render(<InformationContent infoClassName="test" title={title} children={children}/>);
     const childrenElements = screen.queryAllByRole("listitem");
 
     expect(childrenElements).toHaveLength(0);
