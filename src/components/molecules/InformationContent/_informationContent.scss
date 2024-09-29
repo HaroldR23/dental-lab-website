@@ -1,4 +1,11 @@
-.informationContent {
+.footerInfo {
+    h4 {
+        border-bottom: $negro solid 1px;
+        border-radius: 5px;
+    }
+}
+
+.productInfo {
     h4 {
         border-bottom: $negro solid 1px;
         border-radius: 5px;
@@ -6,8 +13,13 @@
 }
 
 @media (max-width: 600px) {
-    .informationContent {
+    .footerInfo {
         width: 65%;
         margin: 0 auto;
+    }
+
+    .productInfo {
+        margin: 0px;
+        padding: 0px;
     }
 }
