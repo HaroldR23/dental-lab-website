@@ -17,6 +17,7 @@ const FooterItems = ({ items }: FooterItemsPropTypes) => {
       {
         items.map((item: FooterItemType, index: number) => (
           <InformationContent
+            infoClassName="footerInfo"
             key={index}
             title={item.title} 
             children={footerItems(item.children)}

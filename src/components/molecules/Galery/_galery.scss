@@ -1,7 +1,5 @@
 .galeryContainer { 
-    // @include caja-grid-3(400px, auto, 40px);
     @include caja-flex(center, center, wrap);
-
 }
 
 .imgContainer {

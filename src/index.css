@@ -213,6 +213,15 @@ body {
   width: 80%;
 }
 
+@media (max-width: 600px) {
+  .footerItemsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
 .footer {
   display: flex;
   justify-content: space-between;
@@ -229,11 +238,30 @@ body {
   border-radius: 5px;
 }
 
+@media (max-width: 600px) {
+  .footer {
+    height: fit-content;
+    width: 100%;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px;
+    padding-bottom: 15px;
+  }
+}
 .informationContent h4 {
   border-bottom: #191919 solid 1px;
   border-radius: 5px;
 }
 
+@media (max-width: 600px) {
+  .informationContent {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
 .buttonLinksContainer {
   display: flex;
   justify-content: space-around;
@@ -294,6 +322,14 @@ body {
   background-repeat: space;
   font-family: "Sansita Swashed", cursive;
   margin-bottom: 40px;
+}
+
+#labInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .ant-collapse-content-box {

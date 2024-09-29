@@ -47,7 +47,7 @@ export const ANCHOR_ITEMS = [
   { href:"/#footer", id:"1", title:"Contáctanos"},
   { href:"/#content", id:"2", title:"¿Qué te ofrecemos?"},
   { href:"/#labInfo", id:"3", title:"Nosotros"},
-  { href:"/#galery", id:"3", title:"Galeria"}
+  { href:"/#galery", id:"4", title:"Galeria"}
 ];
 
 

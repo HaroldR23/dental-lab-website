@@ -13,13 +13,15 @@ const LabInformation = ({ items }: LabInformationPropTypes) => {
   }));
 
   return (
-    <Collapse
-      size={isSmallScreen ? "middle" :"large"}
-      expandIcon={() => <CaretRightOutlined />}
-      expandIconPosition="start"
-      accordion
-      items={collapseItems}
-    />
+    <div id="labInfo">
+      <Collapse
+        size={isSmallScreen ? "middle" :"large"}
+        expandIcon={() => <CaretRightOutlined />}
+        expandIconPosition="start"
+        accordion
+        items={collapseItems}
+      />
+    </div>
   );
 }
 

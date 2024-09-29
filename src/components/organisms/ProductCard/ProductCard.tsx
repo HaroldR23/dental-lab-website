@@ -22,6 +22,7 @@ const ProductCard = ({ productName, imgUrl, price }: ProductCardPropTypes) => {
   return (
     <div className="productCard">
       <InformationContent 
+        infoClassName="productInfo"
         title={productName}
         children={childrenItems}   
       />

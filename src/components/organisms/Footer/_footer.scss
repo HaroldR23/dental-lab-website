@@ -10,9 +10,15 @@
     img{
         border-radius: 5px;
     }
-    // h6{
-    //     border-bottom: $negro solid 1px;
-    //     border-radius: 5px;
-    // }
+}
 
+@media (max-width: 600px) {
+    .footer {
+        height: fit-content;
+        width: 100%;
+        font-size: medium;
+        @include caja-flex(center, center, wrap);
+        padding: 0px;
+        padding-bottom: 15px;
+    }
 }
