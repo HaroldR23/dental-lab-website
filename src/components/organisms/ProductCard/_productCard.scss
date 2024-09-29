@@ -5,8 +5,10 @@
     flex-direction: column;
     height: 320px;
     border-radius: 15px;
+    margin: 10px;
+    padding: 30px;
 
-    img {
+    .productImg {
         border-radius: 15px;
         padding-top: 5px;
         height:200px;
@@ -22,4 +24,19 @@
 .priceContainer {
     margin-top: 25px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    .productCard {
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+        margin: 0px;
+        .productImg {
+            height: 100px;
+            width: 150px;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
 }

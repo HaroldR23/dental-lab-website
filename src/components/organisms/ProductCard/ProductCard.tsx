@@ -17,7 +17,7 @@ const ProductCard = ({ productName, imgUrl, price }: ProductCardPropTypes) => {
         </div>
       ))}
     </div>,
-    <img key={0} src={imgUrl} alt={productName} />,
+    <img key={0} className="productImg" src={imgUrl} alt={productName} />,
   ]
   return (
     <div className="productCard">
