@@ -8,9 +8,11 @@ import { groupByDate } from "../../../utils/groupByDate";
 import CreateAppointmentForm from "../../molecules/CreateAppointmentForm/CreateAppointmentForm";
 import { useEffect, useState } from "react";
 import { EMAIL_INPUT_ERROR_MESSAGE, EMAIL_VALIDATION_ERROR_MESSAGE, NAME_INPUT_ERROR_MESSAGE, TIME_INPUT_ERROR_MESSAGE } from "../../../constants/appointmentConstants";
+import { useMediaQuery } from "react-responsive";
 
 
 const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
   const { appointments, createAppointment } = useAppointmentContext();
   const initialForm: AppointmentModel = {
     patientName: "",
@@ -108,7 +110,7 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
         open={isOpen}
         onCancel={onClose}
         footer={null}
-        width="70%"
+        width={isSmallScreen ? "90%" : "70%"}
         centered
       >
         <CreateAppointmentForm 
@@ -123,11 +125,12 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
         >
           <Calendar
             fullscreen={false}
-            cellRender={cellRender}
+            cellRender={isSmallScreen ? undefined : cellRender}
             mode="month"
             onSelect={handleSelect}    
           />
         </div>
+        {isSmallScreen && <h2>Agendar Cita</h2>}
       </Modal>
     </ConfigProvider>
   )
