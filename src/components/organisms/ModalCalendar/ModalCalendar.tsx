@@ -3,14 +3,18 @@ import { ModalPropTypes } from "./ModalCalendarPropTypes";
 import { useAppointmentContext } from "../../../hooks/useAppointmentContext";
 import { AppointmentModel } from "../../../models/AppointmentModel";
 import type { Dayjs } from "dayjs";
-import type { CalendarProps } from "antd";
+// import type { CalendarProps } from "antd";
 import { groupByDate } from "../../../utils/groupByDate";
 import CreateAppointmentForm from "../../molecules/CreateAppointmentForm/CreateAppointmentForm";
 import { useEffect, useState } from "react";
-import { EMAIL_INPUT_ERROR_MESSAGE, EMAIL_VALIDATION_ERROR_MESSAGE, NAME_INPUT_ERROR_MESSAGE, TIME_INPUT_ERROR_MESSAGE } from "../../../constants/appointmentConstants";
+// import { EMAIL_INPUT_ERROR_MESSAGE, EMAIL_VALIDATION_ERROR_MESSAGE, NAME_INPUT_ERROR_MESSAGE, TIME_INPUT_ERROR_MESSAGE } from "../../../constants/appointmentConstants";
+import { useMediaQuery } from "react-responsive";
+import { cellRender } from "./utils/cellRender";
+import { validate } from "./utils/validate";
 
 
 const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
   const { appointments, createAppointment } = useAppointmentContext();
   const initialForm: AppointmentModel = {
     patientName: "",
@@ -31,38 +35,11 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
     patientPhone: ""
   });
 
-  const validate = () => {
-    const newErrors = {
-      patientName: form.patientName ? "" : NAME_INPUT_ERROR_MESSAGE,
-      patientEmail: form.patientEmail ? (/\S+@\S+\.\S+/.test(form.patientEmail) ? "" : EMAIL_VALIDATION_ERROR_MESSAGE) : EMAIL_INPUT_ERROR_MESSAGE,
-      time: form.time ? "" : TIME_INPUT_ERROR_MESSAGE,
-      patientPhone: form.patientPhone ? "" : "Phone number is required"
-    };
-    setErrors(newErrors);
-    return Object.values(newErrors).every(error => error === "");
-  };
-
   useEffect(() => {
     if (form.date !== "") {
       setDisabledSelect(false);
     }
   }, [form.date]);
-
-  const cellRender: CalendarProps<Dayjs>["cellRender"] = (current, info) => {
-    const currentDate = current.format("DD/MM/YYYY");
-    const currentAppointments = groupedDates && groupedDates[currentDate];
-    if (info.type === "date") {
-      return (
-        <div className="listContainer">
-          {currentAppointments?.map((appointment: AppointmentModel) => (
-            <div key={appointment.id}>
-              {appointment.time}
-            </div>
-          ))}
-        </div>
-      )
-    } else return info.originNode;
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (typeof e === "string") {
@@ -87,7 +64,7 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
   }
 
   const handleClick = () => {
-    if (validate()) {
+    if (validate(form, setErrors)) {
       createAppointment(form);
       onClose();
     }
@@ -108,7 +85,7 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
         open={isOpen}
         onCancel={onClose}
         footer={null}
-        width="70%"
+        width={isSmallScreen ? "90%" : "70%"}
         centered
       >
         <CreateAppointmentForm 
@@ -123,11 +100,12 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
         >
           <Calendar
             fullscreen={false}
-            cellRender={cellRender}
+            cellRender={isSmallScreen ? undefined : (current, info) => cellRender(current, info, groupedDates)}
             mode="month"
             onSelect={handleSelect}    
           />
         </div>
+        {isSmallScreen && <h2>Agendar Cita</h2>}
       </Modal>
     </ConfigProvider>
   )

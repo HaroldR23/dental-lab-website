@@ -2,6 +2,7 @@ import { Input, Select } from "antd";
 import { CreateAppointmentFormPropTypes } from "./CreateAppointmentFormPropTypes";
 import { PHOTO_FORM, SELECT_TIME_OPTIONS } from "../../../constants/appointmentConstants";
 import Button from "../../atoms/Button/Button";
+import { useMediaQuery } from "react-responsive";
 
 const CreateAppointmentForm = ({ 
   handleChange, 
@@ -9,9 +10,11 @@ const CreateAppointmentForm = ({
   disabledSelect, 
   errors
 }: CreateAppointmentFormPropTypes) => {
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
+
   return (
     <div className="createAppointmentForm">
-      <h2>Agendar Cita</h2>
+      {!isSmallScreen && <h2>Agendar Cita</h2>}
       <div className="inputsContainer">
         <div>
           <Input
@@ -56,7 +59,7 @@ const CreateAppointmentForm = ({
         </div>
         <Button  onClick={handleClick} textContent="Agendar" className="scheduleButton"/>
       </div>
-      <img src={PHOTO_FORM} width="250px"/>
+      {!isSmallScreen && <img src={PHOTO_FORM} width="250px"/>}
     </div>
   );
 }

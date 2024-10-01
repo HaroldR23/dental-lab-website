@@ -21,3 +21,18 @@
     border: 1px solid black;
     border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+    .createAppointmentForm {
+        align-self: center;
+        height: 200px;
+        margin-top: 20px;
+    }
+    .inputsContainer {
+        width: 200px;
+        height: 200px;
+    }
+    .select {
+        width: 200px;
+    }
+}
