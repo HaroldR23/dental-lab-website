@@ -2,11 +2,33 @@ import { render, screen } from "@testing-library/react";
 import ModalCalendar from "./ModalCalendar";
 import { userEvent } from "@testing-library/user-event";
 import { useMediaQuery } from "react-responsive";
+// import { CreateAppointmentFormPropTypes } from "../../molecules/CreateAppointmentForm/CreateAppointmentFormPropTypes";
+import { AppointmentContext } from "../../../contexts/AppointmentContext/AppointmentContext";
+import { mockValueAppointmentContext } from "../../../constants/mockValueContext";
+import { CreateAppointmentFormPropTypes } from "../../molecules/CreateAppointmentForm/CreateAppointmentFormPropTypes";
 
 jest.mock("react-responsive", () => ({
   useMediaQuery: jest.fn(),
 }));
 
+jest.mock("./utils/validate", () => ({
+  validate: jest.fn().mockReturnValue({}),
+}));
+
+jest.mock("../../molecules/CreateAppointmentForm/CreateAppointmentForm", () => (
+  { disabledSelect, 
+    errors, 
+    handleChange, 
+    handleClick 
+  }: CreateAppointmentFormPropTypes) => {
+  console.log("disabledSelect", disabledSelect);
+  return <div>
+    <input type="text" name="patientName" onChange={handleChange}/>
+    <span>{errors.patientName}</span>
+    <button onClick={handleClick}>Click</button>
+  </div>
+});
+  
 describe("ModalCalendar", () => {
   const user = userEvent.setup();
   const onCloseMock = jest.fn();
@@ -59,4 +81,43 @@ describe("ModalCalendar", () => {
 
     expect(heading).toBeDefined();
   });
+
+  it("should call handleClick when the button is clicked", async () => {
+    render(
+      <AppointmentContext.Provider value={mockValueAppointmentContext}>
+        <ModalCalendar isOpen={true} onClose={onCloseMock} />
+      </AppointmentContext.Provider>
+    );
+    const button = screen.getByRole("button", { name: "Click" });
+    console.log(button);
+    await user.click(button);
+
+    expect(onCloseMock).toHaveBeenCalled();
+    expect(mockValueAppointmentContext.createAppointment).toHaveBeenCalled();
+  });
+
+  it("should call handleChange when the input is changed", async () => {
+    jest.clearAllMocks();
+    render(
+      <AppointmentContext.Provider value={mockValueAppointmentContext}>
+        <ModalCalendar isOpen={true} onClose={onCloseMock} />
+      </AppointmentContext.Provider>
+    );
+
+    const input = screen.getByRole("textbox");
+    const button = screen.getByRole("button", { name: "Click" });
+
+    await user.type(input, "test");
+    await user.click(button);
+
+    expect(mockValueAppointmentContext.createAppointment).toHaveBeenCalledWith(
+      {
+        patientName: "test",
+        date: "",
+        patientEmail: "",
+        patientPhone: "",
+        time: "",
+      });
+  });
+
 });

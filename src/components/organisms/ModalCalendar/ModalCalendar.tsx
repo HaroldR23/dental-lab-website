@@ -2,7 +2,6 @@ import { Modal, Calendar, ConfigProvider } from "antd";
 import { ModalPropTypes } from "./ModalCalendarPropTypes";
 import { useAppointmentContext } from "../../../hooks/useAppointmentContext";
 import { AppointmentModel } from "../../../models/AppointmentModel";
-import type { Dayjs } from "dayjs";
 // import type { CalendarProps } from "antd";
 import { groupByDate } from "../../../utils/groupByDate";
 import CreateAppointmentForm from "../../molecules/CreateAppointmentForm/CreateAppointmentForm";
@@ -11,6 +10,8 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { cellRender } from "./utils/cellRender";
 import { validate } from "./utils/validate";
+import { handleChange } from "./utils/handleChange";
+import { handleSelect } from "./utils/handleSelect";
 
 
 const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
@@ -41,30 +42,31 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
     }
   }, [form.date]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (typeof e === "string") {
-      setForm({
-        ...form,
-        time: e
-      });
-      return;
-    }
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-    
-  }
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (typeof e === "string") {
+  //     setForm({
+  //       ...form,
+  //       time: e
+  //     });
+  //     return;
+  //   }
+  //   setForm({
+  //     ...form,
+  //     [e.target.name]: e.target.value
+  //   });
+  // }
 
-  const handleSelect = (date: Dayjs) => {
-    setForm({
-      ...form,
-      date: date.format("DD/MM/YYYY")
-    });
-  }
+  // const handleSelect = (date: Dayjs) => {
+  //   setForm({
+  //     ...form,
+  //     date: date.format("DD/MM/YYYY")
+  //   });
+  // }
 
   const handleClick = () => {
+    console.log("handleClick");
     if (validate(form, setErrors)) {
+      console.log("andetro del if");
       createAppointment(form);
       onClose();
     }
@@ -90,7 +92,7 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
       >
         <CreateAppointmentForm 
           handleClick={handleClick}
-          handleChange={handleChange} 
+          handleChange={(e) => handleChange(e, setForm, form)} 
           disabledSelect={disabledSelect}
           errors={errors}
         />
@@ -102,7 +104,7 @@ const ModalCalendar = ({ isOpen, onClose }: ModalPropTypes) => {
             fullscreen={false}
             cellRender={isSmallScreen ? undefined : (current, info) => cellRender(current, info, groupedDates)}
             mode="month"
-            onSelect={handleSelect}    
+            onSelect={(dayjs) => handleSelect(dayjs, setForm, form)}    
           />
         </div>
         {isSmallScreen && <h2>Agendar Cita</h2>}
