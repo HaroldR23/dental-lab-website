@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import Copyright from "./Copyright";
 import { ProductContext } from "../../../contexts/ProductContext/ProductContext";
-import { mockValueContext } from "../../../constants/mockValueContext";
+import { mockValueProductContext } from "../../../constants/mockValueContext";
 
 describe("Copyright", () => {
   const textContent = "Copyright © 2022";
   const logoUrl = "https://example.com/logo.png";
   it("renders the text content correctly", () => {
     const { container } = render(
-      <ProductContext.Provider value={mockValueContext}>
+      <ProductContext.Provider value={mockValueProductContext}>
         <Copyright textContent={textContent} logoUrl={logoUrl}/>
       </ProductContext.Provider>
     );
@@ -18,7 +18,7 @@ describe("Copyright", () => {
 
   it("renders the logo correctly", () => {
     render(
-      <ProductContext.Provider value={mockValueContext}>
+      <ProductContext.Provider value={mockValueProductContext}>
         <Copyright textContent={textContent} logoUrl={logoUrl}/>
       </ProductContext.Provider>
     );
