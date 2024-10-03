@@ -17,7 +17,7 @@ export const getAllProductsService = async () => {
     return dataResponse;
 
   } catch (error: any) {
-    throw new Error(error);
+    return error;
   }
 };
 
@@ -33,6 +33,6 @@ export const createProductService = async (product: ProductModel) => {
     await postFetchMethod(`${API_URL}products`, body);
   
   } catch (error: any) {
-    throw new Error(error);
+    return error;
   }
 }

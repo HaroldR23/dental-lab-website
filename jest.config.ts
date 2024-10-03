@@ -1,5 +1,5 @@
 import type {Config} from 'jest';
-const COVERAGE_THRESHOLD = 30;
+const COVERAGE_THRESHOLD = 80;
 
 const config: Config = {
   verbose: true,
@@ -14,7 +14,10 @@ const config: Config = {
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",
     "!src/constants/**",
-    '!src/**/*.d.ts'
+    "!src/App.tsx",
+    "!src/main.tsx",
+    "!src/contexts/**",
+    "!src/**/*.d.ts"
   ],
   coverageDirectory: "coverage",
   coverageThreshold: {

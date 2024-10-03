@@ -2,13 +2,13 @@ import { render } from "@testing-library/react";
 import ButtonLink from "./ButtonLink";
 import { StarOutlined } from "@ant-design/icons";
 import { ProductContext } from "../../../contexts/ProductContext/ProductContext";
-import { mockValueContext } from "../../../constants/mockValueContext";
+import { mockValueProductContext } from "../../../constants/mockValueContext";
 
 describe("ButtonLink", () => {
   it("should render a svg and a h4 elements correctly", () => {
     const text = "Button text test";
     const { container } = render(
-      <ProductContext.Provider value={mockValueContext}>
+      <ProductContext.Provider value={mockValueProductContext}>
         <ButtonLink icon={<StarOutlined />} text={text}/>
       </ProductContext.Provider>
     );

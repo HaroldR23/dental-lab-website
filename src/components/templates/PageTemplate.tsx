@@ -6,12 +6,12 @@ import { PageTemplatePropTypes } from "./PageTemplatePropTypes";
 const PageTemplate = ({ body, carousel }: PageTemplatePropTypes) => {
   return (
     <>
-      <header>
+      <header data-testid="header">
         {carousel && carousel}
         <NavBar anchorItems={ANCHOR_ITEMS} logoUrl={NAV_BAR_LOGO_URL}/>
       </header>
       {body}
-      <footer>
+      <footer data-testid="footer">
         <Footer 
           items={FOOTER_ITEMS} 
           logoFooterUrl={FOOTER_LOGO_URL}

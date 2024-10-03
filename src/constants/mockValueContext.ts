@@ -20,10 +20,18 @@ const mockProducts: ProductModel[] = [{
 }
 ];
 
-export const mockValueContext = {
+export const mockValueProductContext = {
   products: mockProducts, 
   createProduct: jest.fn(), 
   setProducts: jest.fn(), 
+  error: "",
+  loading: false
+};
+
+export const mockValueAppointmentContext = {
+  appointments: [],
+  createAppointment: jest.fn(),
+  setAppointments: jest.fn(),
   error: "",
   loading: false
 };
