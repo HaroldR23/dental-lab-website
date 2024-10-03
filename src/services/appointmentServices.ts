@@ -19,7 +19,7 @@ export const getAllAppointmentsService = async () => {
     return dataResponse;
 
   } catch (error: any) {
-    throw new Error(error);
+    return error;
   }
 };
 
@@ -37,6 +37,6 @@ export const createAppointmentService = async (appointment: AppointmentModel) =>
     await postFetchMethod(`${API_URL}appointments`, body);
 
   } catch (error: any) {
-    throw new Error(error);
+    return error;
   }
 };
